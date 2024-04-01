@@ -1,8 +1,9 @@
-"use client"
+"use client";
 
 import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
+import { BsSearch } from 'react-icons/bs';
 
 export default function Home() {
   const [city, setCity] = useState("");
@@ -17,26 +18,34 @@ export default function Home() {
     axios.get(url).then((response) => {
       setWeather(response.data);
       console.log("🚀 ~ axios.get ~ response.data:", response.data);
-    })
- 
-    setCity('')
+    });
+
+    setCity("");
     setLoading(false);
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Ashes Weather</h1>
-      <button onClick={fetchWeather}>click me</button>
-    </main>
+    <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/0 z-[6]">
+      <Image
+        src="https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        layout="fill"
+        className="object-cover"
+      />
+      <div className="relative flex justify-between items-center ">
+        <form>
+          <div>
+            <input type="text" placeholder="Search City" />
+          </div>
+          <button onClick={fetchWeather}><BsSearch /></button>
+        </form>
+      </div>
+    </div>
   );
 }
 
-
-
-
 // "use client";
 
-// import axios from "axios";
+// import axios from "axios";z
 // import Image from "next/image";
 // import { useState } from "react";
 
