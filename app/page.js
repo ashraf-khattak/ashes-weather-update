@@ -15,7 +15,7 @@ export default function Home() {
 
   useEffect(() => {
     // Fetch weather for default city when component mounts
-    fetchWeatherForCity("London"); // You can change "London" to any default city you prefer
+    fetchWeatherForCity("Islamabad"); // You can change "Islamabad" to any default city you prefer
   }, []); // Empty dependency array to ensure this effect runs only once when component mounts
 
   const fetchWeatherForCity = (cityName) => {
@@ -33,7 +33,7 @@ export default function Home() {
         console.error("Error fetching weather data:", error);
         setLoading(false); // Set loading to false in case of an error
         setError(true); // Set error state to true
-        setCity("London"); // Set default city in case of an error
+        setCity("Islamabad"); // Set default city in case of an error
       });
   };
 
