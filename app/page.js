@@ -1,6 +1,3 @@
-
-
-
 "use client";
 import React, { useState, useEffect } from "react";
 import Weather from "@/components/weather";
@@ -24,19 +21,20 @@ export default function Home() {
   const fetchWeatherForCity = (cityName) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`;
     setLoading(true); // Set loading to true before making the request
-    axios.get(url).then((response) => {
-      setWeather(response.data);
-      setLoading(false); // Set loading to false after receiving the response
-      setError(false); // Reset error state if the request succeeds
-      console.log("🚀 ~ axios.get ~ response.data:", response.data);
-    })
-    .catch((error) => {
-      console.error("Error fetching weather data:", error);
-      setLoading(false); // Set loading to false in case of an error
-      setError(true); // Set error state to true
-      setCity("London"); // Set default city in case of an error
-    });
-
+    axios
+      .get(url)
+      .then((response) => {
+        setWeather(response.data);
+        setLoading(false); // Set loading to false after receiving the response
+        setError(false); // Reset error state if the request succeeds
+        console.log("🚀 ~ axios.get ~ response.data:", response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching weather data:", error);
+        setLoading(false); // Set loading to false in case of an error
+        setError(true); // Set error state to true
+        setCity("London"); // Set default city in case of an error
+      });
   };
 
   const fetchWeather = (e) => {
@@ -113,7 +111,7 @@ export default function Home() {
 //     return (
 //       <>
 //         <Image src={bgWeather} layout="fill" alt="Spinner" />
-      
+
 //         <div className="absolute top-0 left-0 right-0 bottom-0 p-2 bg-black/40 z-[6]">
 //         <h1 className="text-5xl text-center text-white">Ashes Khan</h1>
 //           <div className="relative flex justify-between items-center max-w-[500px] w-full m-auto pt-4 text-white z-10">
