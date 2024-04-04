@@ -39,9 +39,9 @@ const Weather = ({ data }) => {
   return (
     <div className="relative flex flex-col justify-between max-w-[900px] w-full  m-auto p-4 text-gray-300 z-10 ">
       {/* Top */}
-      <div className=" relative p-5 rounded-3xl">
-        <div className="text-center pt-5">
-          <p className="text-5xl text-center pb-6">{data.name}</p>
+      <div className=" relative p-2 rounded-3xl">
+        <div className="text-center">
+          <p className="text-5xl text-center pb-3">{data.name}</p>
           <p className="text-9xl">
             {fahrenheitToCelsius(data.main.temp).toFixed(0)}
             <span className="text-6xl">&#176;c</span>

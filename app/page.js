@@ -51,18 +51,18 @@ export default function Home() {
         <Image src={bgWeather} layout="fill" alt="Spinner" />
         <div className="absolute top-0 left-0 right-0 bottom-0 p-2 bg-black/50 z-[6]">
           <h1 className="text-5xl text-center text-white">Ashes Khan</h1>
-          <div className="relative flex justify-between items-center max-w-[500px] w-full m-auto pt-4 text-white z-10">
+          <div className="flex justify-between items-center max-w-[700px] w-full m-auto pt-1 text-white">
             <form
               onSubmit={fetchWeather}
-              className="flex justify-between items-center w-full m-auto p-3 bg-transparent border border-gray-300 text-white rounded-2xl"
+              className="flex justify-between items-center w-full m-auto p-2 bg-transparent border border-gray-300 text-white rounded-2xl"
             >
-              <div class="w-full mb-2">
+              <div class="w-full">
                 <div class="flex justify-center">
                   <input
                     onChange={(e) => setCity(e.target.value)}
                     type="text"
                     placeholder="Search City"
-                    class=" w-full border rounded items-center bg-transparent border-none text-white focus:outline-none text-3xl"
+                    class=" w-full border rounded items-center bg-transparent border-none text-white focus:outline-none text-2xl"
                   />
                   <button onClick={fetchWeather}>
                     <BsSearch size={20} />
