@@ -49,8 +49,9 @@ export default function Home() {
     return (
       <>
         <Image src={bgWeather} layout="fill" alt="Spinner" />
-        <div className="absolute top-0 left-0 right-0 bottom-0 p-2 bg-black/40 z-[6]">
-          <h1 className="text-5xl text-center text-white">Ashes Khan</h1>
+        <div className="bg-black/50 relative p-5">
+          <div className="bg-black/50 relative rounded-3xl">
+          <h1 className="text-5xl text-center text-white ">Ashes Khan</h1>
           <div className="relative flex justify-between items-center max-w-[500px] w-full m-auto pt-4 text-white z-10">
             <form
               onSubmit={fetchWeather}
@@ -73,6 +74,7 @@ export default function Home() {
           </div>
           {/* Weather */}
           {weather.main && <Weather data={weather} />}
+          </div>
         </div>
       </>
     );
